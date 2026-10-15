@@ -1,24 +1,15 @@
+abstract class Account {
+    String accountNumber;
+    String ownerName;
+    long balance;
 
-public class Account {
-    private String accountNumber;
-    private String name;
-    private long balance;
-
-    public Account(String accountNumber, String name, long balance) {
+    Account(String accountNumber, String ownerName, long balance) {
         this.accountNumber = accountNumber;
-        this.name = name;
+        this.ownerName = ownerName;
         this.balance = balance;
     }
 
-    public String getAccountNumber() {
-        return accountNumber;
-    }
+    abstract double interestRate();
 
-    public String getName() {
-        return name;
-    }
-
-    public long getBalance() {
-        return balance;
-    }
+    abstract boolean canWithdraw(long amount);
 }

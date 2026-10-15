@@ -1,11 +1,28 @@
-
 public class Driver {
     public static void main(String[] args) {
 
-        String chat = "Hello everyone\nThis is spam message\nHow are you?\nSpam link here\nHave a nice day";
+        Shape[] shapes = {
+            new Circle(5),
+            new Rectangle(4, 6),
+            new Triangle(3, 8)
+        };
 
-        System.out.println("Filtered Chat Messages:");
+        double total = 0;
+        double largest = 0;
 
-        ChatFilter.filter(chat);
+        for (Shape s : shapes) {
+            double area = s.area();
+
+            System.out.println("Area = " + area);
+
+            total = total + area;
+
+            if (area > largest) {
+                largest = area;
+            }
+        }
+
+        System.out.println("Total Area = " + total);
+        System.out.println("Largest Area = " + largest);
     }
 }
