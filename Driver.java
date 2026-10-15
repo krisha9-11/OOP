@@ -1,32 +1,11 @@
-public class Driver {
 
+public class Driver {
     public static void main(String[] args) {
 
-        Point[] points = {
-            new Point(1, 2),
-            new Point(3, 4),
-            new Point(1, 2),
-            new Point(5, 6),
-            new Point(3, 4)
-        };
+        String chat = "Hello everyone\nThis is spam message\nHow are you?\nSpam link here\nHave a nice day";
 
-        int distinct = 0;
+        System.out.println("Filtered Chat Messages:");
 
-        for (int i = 0; i < points.length; i++) {
-
-            boolean repeated = false;
-
-            for (int j = 0; j < i; j++) {
-                if (points[i].equals(points[j])) {
-                    repeated = true;
-                    break;
-                }
-            }
-
-            if (!repeated)
-                distinct++;
-        }
-
-        System.out.println("Distinct: " + distinct);
+        ChatFilter.filter(chat);
     }
 }
